@@ -3,6 +3,7 @@ module.exports = {
     index,
     new: newFlight,
     create,
+    show,
 }
 
 
@@ -30,4 +31,13 @@ function create(req, res) {
         }
         res.redirect("/flights")
     })
+}
+
+function show(req, res) {
+    Flight.findById(req.params.id, function (err, flight) {
+        res.render("flights/show", {
+            flight
+        });
+    })
+
 }
