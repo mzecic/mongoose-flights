@@ -61,5 +61,12 @@
     <% } else { %>
         <h5>No additional details available</h5>
         <% } %>
+        <h3>Tickets:</h3>
+        <% tickets.forEach((t) => { %>
+            <ul>
+                <li>Seat: <%= t.seat %> Price: <%= t.price %></li>
+            </ul>
+        <% }) %>
+        <button><a href="/flights/<%= flight._id %>/tickets/new">Add a new ticket</a></button>
 </body>
 </html>
